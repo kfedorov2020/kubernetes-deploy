@@ -16,7 +16,7 @@ spec:
         app: custom-external
     spec:
       containers:
-      - image: ajay185/frontend:v1.0.0
+      - image: ajay185/frontend:v2.0
         name: custom-external
         imagePullPolicy: "Always"
         env:
