@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: events-internal
-  name: events-internal
+    app: custom-internal
+  name: custom-internal
 spec:
   replicas: 2 
   selector:
     matchLabels:
-      app: events-internal
+      app: custom-internal
   strategy: {}
   template:
     metadata:
       labels:
-        app: events-internal
+        app: custom-internal
     spec:
       containers:
-      - image: saumyananduru/internal-image:V1.0
-        name: events-internal
+      - image: ajay185/backend:v1.0.1
+        name: custom-internal
         imagePullPolicy: "Always"
         resources:
           requests:

@@ -2,26 +2,26 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: events-external
-  name: events-external
+    app: custom-external
+  name: custom-external
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: events-external
+      app: custom-external
   strategy: {}
   template:
     metadata:
       labels:
-        app: events-external
+        app: custom-external
     spec:
       containers:
-      - image: saumyananduru/external-image:V1.0
-        name: events-external
+      - image: ajay185/frontend:v1.0.0
+        name: custom-external
         imagePullPolicy: "Always"
         env:
         - name: SERVER
-          value: "http://35.202.128.234:80"
+          value: "http://custom-internal"
         resources:
           requests:
             memory: "128Mi"
