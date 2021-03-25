@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: development
   labels:
     app: events-internal
   name: events-internal
@@ -11,6 +12,6 @@ spec:
     targetPort: 8082
   selector:
     app: events-internal
-  type: LoadBalancer
+  type: ClusterIP
 status:
   loadBalancer: {}

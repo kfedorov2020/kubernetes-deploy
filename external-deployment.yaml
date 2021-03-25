@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: development
   labels:
     app: events-external
   name: events-external
@@ -21,7 +22,7 @@ spec:
         imagePullPolicy: "Always"
         env:
         - name: SERVER
-          value: "http://35.202.128.234:80"
+          value: "http://events-internal"
         resources:
           requests:
             memory: "128Mi"
